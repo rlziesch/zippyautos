@@ -1,6 +1,6 @@
 
 <?php
-$dsn = 'mysql:host=g84t6zfpijzwx08q.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=zippy_data';
+$dsn = 'mysql:host=g84t6zfpijzwx08q.cbetxkdyhwsb.us-east-1.rds.amazonaws.com;dbname=hj1uw7504aalaap8';
 $username = 'l1um6e8judhzu9xh';
 $password= 'ez5fostyl2bkquz2';
 //no $password
