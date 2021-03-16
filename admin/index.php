@@ -2,11 +2,11 @@
 
 //needed files
 
-    require_once('model/database.php');
-    require('model/classes_db.php');
-    require('model/makes_db.php');
-    require('model/types_db.php');
-    require('model/vehicles_db.php');
+require_once('../model/database.php');
+require('../model/classes_db.php');
+require('../model/makes_db.php');
+require('../model/types_db.php');
+require('../model/vehicles_db.php');
     
 //sanitize POSTS
 
@@ -179,6 +179,8 @@ include('view/header.php'); ?>
                 <br>
         <a href="add_vehicle_form.php">Add Vehicle</a><br>
         <a href="class_list.php">View Class List</a><br>
+        <a href="make_list.php">View Make List</a><br>
+        <a href="type_list.php">View Type List</a><br>
         
         
     </section>
