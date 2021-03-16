@@ -23,11 +23,11 @@ $classes = get_classes($class_id);
                 </tr>
         <?php endforeach; ?>
         <br>
-        <p><a href="../index.php">View Vehicle List</a></p>
+       
 
         </table>
 
-
+        <p><a href="../index.php">View Vehicle List</a></p>
 
     </section>
 
