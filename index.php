@@ -15,6 +15,15 @@ $type_id = filter_input(INPUT_POST, 'type_id');
 $class_id = filter_input(INPUT_POST, 'class_id');
 $vehicle_id = filter_input(INPUT_POST, 'vehicle_id');
 
+ 
+$action = filter_input (INPUT_POST, 'action');
+if ($action == NULL) {
+    $action = filter_input (INPUT_GET, 'action');
+    if ($action == NULL) {
+        $action = 'list_vehicles';
+    }
+}
+
 
 // call 
 
@@ -32,7 +41,7 @@ include('view/header.php'); ?>
         <?php //category drop downs and radio buttons ?>
 
         <form action="index.php" method="post"
-              id="sort_vehicle_list">
+              id="list_vehicles">
 
             <label>Category:</label>
             <br>
@@ -91,23 +100,77 @@ include('view/header.php'); ?>
 
             <?php
 
+// start switch note--refer to p.248-249 + ch 08 ex2
+            // take action based on variable in POST array
+
+            switch($action) {
+                case 'vehicle_list':
+
+                    if ($type_id) {
+                        
+                        foreach ($vehicles as $vehicle) : 
+                            //format vehicle prices with $ + two decimal places
+                        $price_f = "$".number_format($vehicle['Price'], 2);
+                        $vehicles = get_vehicles_by_type($type_id);?>
+                                <tr>
+                                <td><?php echo $vehicle['Year']; ?></td>
+                                <td><?php echo $vehicle['vehicleMake']; ?></td>
+                                <td><?php echo $vehicle['Model']; ?></td>
+                                <td><?php echo $vehicle['vehicleTypes']; ?></td>
+                                <td><?php echo $vehicle['vehicleClasses']; ?></td>
+                                <td><?php echo $price_f; ?></td>  
+                                </tr>
+                        <?php endforeach; 
+                     
+                     } else if ($make_id) {
+
+                        foreach ($vehicles as $vehicle) : 
+                        $price_f = "$".number_format($vehicle['Price'], 2); 
+                        $vehicles = get_vehicles_by_make($make_id); ?>
+                                <tr>
+                                <td><?php echo $vehicle['Year']; ?></td>
+                                <td><?php echo $vehicle['vehicleMake']; ?></td>
+                                <td><?php echo $vehicle['Model']; ?></td>
+                                <td><?php echo $vehicle['vehicleTypes']; ?></td>
+                                <td><?php echo $vehicle['vehicleClasses']; ?></td>
+                                <td><?php echo $price_f; ?></td>  
+                                </tr>
+                        <?php endforeach;
+
+                     } else if ($class_id) {
+
+                        foreach ($vehicles as $vehicle) : 
+                        $price_f = "$".number_format($vehicle['Price'], 2); 
+                        $vehicles = get_vehicles_by_class($class_id); ?>
+                                <tr>
+                                <td><?php echo $vehicle['Year']; ?></td>
+                                <td><?php echo $vehicle['vehicleMake']; ?></td>
+                                <td><?php echo $vehicle['Model']; ?></td>
+                                <td><?php echo $vehicle['vehicleTypes']; ?></td>
+                                <td><?php echo $vehicle['vehicleClasses']; ?></td>
+                                <td><?php echo $price_f; ?></td>  
+                                </tr>
+                        <?php endforeach;
+                    }
+                    break;
+
+                    default:
+                        foreach ($vehicles as $vehicle) : 
+                        $price_f = "$".number_format($vehicle['Price'], 2); 
+                        $vehicles = get_vehicles($vehicle_id); ?>
+                                <tr>
+                                <td><?php echo $vehicle['Year']; ?></td>
+                                <td><?php echo $vehicle['vehicleMake']; ?></td>
+                                <td><?php echo $vehicle['Model']; ?></td>
+                                <td><?php echo $vehicle['vehicleTypes']; ?></td>
+                                <td><?php echo $vehicle['vehicleClasses']; ?></td>
+                                <td><?php echo $price_f; ?></td>  
+                                </tr>
+                        <?php endforeach;
+                    break; }
+            ?>
 
 
-                if ($vehicles) {    
-                
-                    foreach ($vehicles as $vehicle) : 
-                    //format vehicle prices with $ + two decimal places
-                    $price_f = "$".number_format($vehicle['Price'], 2); ?>
-                        <tr>
-                        <td><?php echo $vehicle['Year']; ?></td>
-                        <td><?php echo $vehicle['vehicleMake']; ?></td>
-                        <td><?php echo $vehicle['Model']; ?></td>
-                        <td><?php echo $vehicle['vehicleTypes']; ?></td>
-                        <td><?php echo $vehicle['vehicleClasses']; ?></td>
-                        <td><?php echo $price_f; ?></td>  
-                        </tr>
-                    <?php endforeach; ?> 
-                <?php } else { "There are no vehicles yet!"; } ?>
 
 
         </table>
