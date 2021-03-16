@@ -51,7 +51,7 @@ footer p {
     margin: 1em 0;
 }
 h1 {
-    font-size: 150%;
+    font-size: 175%;
     margin: 0;
     padding: .5em 0 .25em;
 }
@@ -81,12 +81,17 @@ a:hover {
 table {
     border: 1px solid black;
     border-collapse: collapse;
+
 }
 td, th {
     border: 1px dashed black;
     padding: .2em .5em .2em .5em;
     vertical-align: top;
     text-align: left;
+}
+
+th {
+    background-color: #fdfd96;
 }
 form {
     margin: 0;

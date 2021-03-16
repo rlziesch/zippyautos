@@ -43,6 +43,7 @@ include('view/header.php'); ?>
         <form action="index.php" method="post"
               id="list_vehicles">
 
+            <br>
             <label>Category:</label>
             <br>
             <select name="make_id">
@@ -80,7 +81,7 @@ include('view/header.php'); ?>
             Price<br>
 
 
-            <input type="submit" value="Submit"> 
+            <button input type="submit" value="Submit"> Submit </button>
             </form>       
 
    <br>
