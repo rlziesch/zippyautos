@@ -32,7 +32,7 @@ $classes = get_classes($class_id);
 $types = get_types($type_id);
 $vehicles = get_vehicles($vehicle_id);
 
-$vehicles_by_class = get_vehicle_by_class($class_id);
+
 
 // header 
 
