@@ -2,13 +2,17 @@
 
 // needed pages
 include('header.php');
+require('../../model/database.php');
+require('../../model/vehicles_db.php');
 
-require('..model/database.php');
 
 // Get all vehicles
+$vehicle_id = filter_input(INPUT_POST, 'vehicle_id');
 $vehicles = get_vehicles($vehicle_id);
 
+
 ?>
+
 <section>
 
         <h1>Add Vehicle</h1><br>
@@ -17,57 +21,37 @@ $vehicles = get_vehicles($vehicle_id);
               id="add_vehicle_form">
 
               <select name="make_id">
-                <option value=".">View All Makes</option>
+                <option value=".">Select Makes</option>
             <?php foreach ($makes as $make) : ?>
                 <option value="<?php echo $make['make_ID']; ?>">
                     <?php echo $make['vehicleMake']; ?>
                 </option>
             <?php endforeach; ?>
+
             </select>
             <br>
             <select name="class_id">
-                <option value=".">View All Classes</option>
+                <option value=".">Select Classes</option>
             <?php foreach ($classes as $class) : ?>
                 <option value="<?php echo $class['class_ID']; ?>">
                     <?php echo $class['vehicleClasses']; ?>
-                </option>
-            <?php endforeach; ?>
-            </select>
-            <br>
-            <select name="type_id">
-                <option value=".">View All Types</option>
-            <?php foreach ($types as $type) : ?>
-                <option value="<?php echo $type['typeID']; ?>">
-                    <?php echo $type['vehicleTypes']; ?>
-                </option>
-            <?php endforeach; ?>
-            </select><select name="make_id">
-                <option value=".">Select Make</option>
-            <?php foreach ($makes as $make) : ?>
-                <option value="<?php echo $make['make_ID']; ?>">
-                    <?php echo $make['vehicleMake']; ?>
-                </option>
-            <?php endforeach; ?>
-            </select>
-            <br>
-            <select name="class_id">
-                <option value=".">Select Class</option>
-            <?php foreach ($classes as $class) : ?>
-                <option value="<?php echo $class['class_ID']; ?>">
-                    <?php echo $class['vehicleClasses']; ?>
-                </option>
-            <?php endforeach; ?>
-            </select>
-            <br>
-            <select name="type_id">
-                <option value=".">Select Type</option>
-            <?php foreach ($types as $type) : ?>
-                <option value="<?php echo $type['typeID']; ?>">
-                    <?php echo $type['vehicleTypes']; ?>
                 </option>
             <?php endforeach; ?>
             </select>
 
+            <br>
+            <select name="type_id">
+                <option value=".">Select Types</option>
+            <?php foreach ($types as $type) : ?>
+                <option value="<?php echo $type['typeID']; ?>">
+                    <?php echo $type['vehicleTypes']; ?>
+                </option>
+            <?php endforeach; ?>
+            </select>
+            
+            
+            <br>
+           
             <label>Year:</label>
             <input type="text" name="year"><br>
 
@@ -81,7 +65,7 @@ $vehicles = get_vehicles($vehicle_id);
             <input type="submit" value="Add Vehicle"><br>
         </form>
 
-        <p><a href="index.php">View Vehicle List</a></p>
+        <p><a href="../index.php">View Vehicle List</a></p>
     <section>
 
     <?php include('footer.php'); ?>
