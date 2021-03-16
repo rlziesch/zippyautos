@@ -6,6 +6,7 @@ require('../../model/database.php');
 require('../../model/vehicles_db.php');
 require('../../model/makes_db.php');
 require('../../model/types_db.php');
+require('../../model/classes_db.php');
 
 
 // Get all vehicles
