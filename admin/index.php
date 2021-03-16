@@ -168,12 +168,15 @@ include('view/header.php'); ?>
                                 <td><?php echo $price_f; ?></td>  
                                 </tr>
                         <?php endforeach;
-                    break; }
+                    break; 
+                
+                
+                }
             ?>
 
 
         </table>
-
+                <br>
         <a href="add_vehicle_form.php">Add Vehicle</a><br>
         <a href="class_list.php">View Class List</a><br>
         

@@ -1,19 +1,19 @@
 <?php 
 include('view/header.php'); ?>
 
-<h2> Class List </h2>
+<h2> Type List </h2>
 
     <section>
     <table>
         <tr>
-            <th>Class</th>
+            <th>Type</th>
         </tr>
     <?php
-        $class = get_class_name($class_name);
+        $type = get_type_name($type_name);
 
-        foreach ($classes as $class) : ?>
+        foreach ($types as $type) : ?>
                 <tr>
-                    <td><?php echo $class['vehicleClasses']; ?></td>
+                    <td><?php echo $type['vehicleTypes']; ?></td>
                 
                 </tr>
         <?php endforeach; ?>

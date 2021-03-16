@@ -1,19 +1,19 @@
 <?php 
 include('view/header.php'); ?>
 
-<h2> Class List </h2>
+<h2> Make List </h2>
 
     <section>
     <table>
         <tr>
-            <th>Class</th>
+            <th>Make</th>
         </tr>
     <?php
-        $class = get_class_name($class_name);
+        $make = get_make_name($make_name);
 
-        foreach ($classes as $class) : ?>
+        foreach ($makes as $make) : ?>
                 <tr>
-                    <td><?php echo $class['vehicleClasses']; ?></td>
+                    <td><?php echo $make['vehicleMake']; ?></td>
                 
                 </tr>
         <?php endforeach; ?>
