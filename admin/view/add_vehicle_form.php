@@ -7,9 +7,16 @@ require('../../model/vehicles_db.php');
 
 
 // Get all vehicles
-$vehicle_id = filter_input(INPUT_POST, 'vehicle_id');
-$vehicles = get_vehicles($vehicle_id);
 
+$make_id = filter_input(INPUT_POST, 'make_id');
+$type_id = filter_input(INPUT_POST, 'type_id');
+$class_id = filter_input(INPUT_POST, 'class_id');
+$vehicle_id = filter_input(INPUT_POST, 'vehicle_id');
+
+$makes = get_makes($make_id);
+$classes = get_classes($class_id);
+$types = get_types($type_id);
+$vehicles = get_vehicles($vehicle_id);
 
 ?>
 
