@@ -2,7 +2,7 @@
 
 // needed pages
 include('header.php');
-include('footer.php');
+
 require('..model/database.php');
 
 // Get all vehicles
@@ -12,7 +12,7 @@ $vehicles = get_vehicles($vehicle_id);
 <section>
 
         <h1>Add Vehicle</h1><br>
-        
+
         <form action="add_vehicle.php" method="post"
               id="add_vehicle_form">
 
@@ -83,3 +83,5 @@ $vehicles = get_vehicles($vehicle_id);
 
         <p><a href="index.php">View Vehicle List</a></p>
     <section>
+
+    <?php include('footer.php'); ?>
