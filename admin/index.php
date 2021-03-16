@@ -177,10 +177,10 @@ include('view/header.php'); ?>
 
         </table>
                 <br>
-        <a href="add_vehicle_form.php">Add Vehicle</a><br>
-        <a href="class_list.php">View Class List</a><br>
-        <a href="make_list.php">View Make List</a><br>
-        <a href="type_list.php">View Type List</a><br>
+        <a href="view/add_vehicle_form.php">Add Vehicle</a><br>
+        <a href="view/class_list.php">View Class List</a><br>
+        <a href="view/make_list.php">View Make List</a><br>
+        <a href="view/type_list.php">View Type List</a><br>
         
         
     </section>
