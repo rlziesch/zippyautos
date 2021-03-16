@@ -56,12 +56,12 @@ h1 {
     padding: .5em 0 .25em;
 }
 h2 {
-    font-size: 120%;
+    font-size: 150%;
     margin: 0;
     padding: .25em 0 .5em;
 }
 h1, h2 {
-    color: rgb(208, 133, 4);
+    color: #000000;
 }
 ul {
     margin: 0 0 1em 0;
@@ -84,8 +84,8 @@ table {
 
 }
 td, th {
-    border: 1px dashed black;
-    padding: .2em .5em .2em .5em;
+    border: 1px solid black;
+    padding: .4em 2em .4em 2em;
     vertical-align: top;
     text-align: left;
 }
@@ -123,4 +123,19 @@ br {
 }
 #add_product_form input[text] {
     width: 15em;
+}
+
+button {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+    font-size: 100%;
+    margin-top: 5px;
+    width: 18%;
+}
+
+select {
+    width: 100%;
+    font-size: 110%;
+    margin-bottom: 10px;
 }
