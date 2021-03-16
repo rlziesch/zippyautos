@@ -2,6 +2,8 @@
 include('view/header.php'); 
 require('../../model/database.php');
 require('../../model/classes_db.php');
+
+$classes = get_classes($class_id);
 ?>
 
 <h2> Class List </h2>
