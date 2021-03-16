@@ -1,5 +1,8 @@
 <?php 
-include('view/header.php'); ?>
+include('view/header.php'); 
+require('../../model/database.php');
+require('../../model/classes_db.php');
+?>
 
 <h2> Class List </h2>
 
@@ -18,7 +21,7 @@ include('view/header.php'); ?>
                 </tr>
         <?php endforeach; ?>
         <br>
-        <a href="index.php">Return to Vehicle List</a><br>
+        <p><a href="../index.php">View Vehicle List</a></p>
 
         </table>
 
@@ -29,4 +32,4 @@ include('view/header.php'); ?>
 
 
 <?php
-incldue('view/footer.php'); ?>
+include('view/footer.php'); ?>
