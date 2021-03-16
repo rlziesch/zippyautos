@@ -9,8 +9,10 @@ require('..model/database.php');
 $vehicles = get_vehicles($vehicle_id);
 
 ?>
+<section>
 
-        <h1>Add Vehicle</h1>
+        <h1>Add Vehicle</h1><br>
+        
         <form action="add_vehicle.php" method="post"
               id="add_vehicle_form">
 
@@ -78,5 +80,6 @@ $vehicles = get_vehicles($vehicle_id);
             <label>&nbsp;</label>
             <input type="submit" value="Add Vehicle"><br>
         </form>
+
         <p><a href="index.php">View Vehicle List</a></p>
-    
+    <section>
