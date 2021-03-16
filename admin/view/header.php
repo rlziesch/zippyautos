@@ -4,7 +4,7 @@
 <!-- the head section -->
 <head>
     <title>Zippy Used Autos ADMIN</title>
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="../main.css" />
 </head>
 
 <!-- the body section -->
