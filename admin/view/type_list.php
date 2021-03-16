@@ -1,7 +1,10 @@
 <?php 
 include('view/header.php');
 require('../../model/database.php');
-require('../../model/types_db.php');?>
+require('../../model/types_db.php');
+
+$types = get_types($type_id);
+?>
 
 <h2> Type List </h2>
 
@@ -20,10 +23,10 @@ require('../../model/types_db.php');?>
                 </tr>
         <?php endforeach; ?>
         <br>
-        <p><a href="../index.php">View Vehicle List</a></p>
+        
 
         </table>
-
+        <p><a href="../index.php">View Vehicle List</a></p>
 
 
     </section>

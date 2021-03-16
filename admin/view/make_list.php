@@ -1,7 +1,10 @@
 <?php 
 include('view/header.php');
 require('../../model/database.php');
-require('../../model/makes_db.php');?>
+require('../../model/makes_db.php');
+
+$makes = get_makes($make_id); ?>
+
 
 <h2> Make List </h2>
 
@@ -19,10 +22,11 @@ require('../../model/makes_db.php');?>
                 
                 </tr>
         <?php endforeach; ?>
-        <br>
-        <p><a href="../index.php">View Vehicle List</a></p>
+        
 
         </table>
+        <br>
+        <p><a href="../index.php">View Vehicle List</a></p>
 
 
 
